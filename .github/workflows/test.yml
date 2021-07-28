@@ -12,5 +12,3 @@ jobs:
     steps:
       - run: |
           echo "Hello!"
-          ehco "GITHUB_TOKEN = ${GITHUB_TOKEN}"
-          ehco "GITHUB_HASHE = ${GITHUB_HASHE}"
