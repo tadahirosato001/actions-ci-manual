@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       logLevel:
-        description: 'Passwordを入力してください。'
+        description: 'If run flow, input "run".'
         required: true
         default: ''
 
@@ -14,9 +14,7 @@ env:
 
 jobs:
   say_hello:
-    env:
-      PASSWORD: ${{ secrets.PASSWORD }}
-    if: github.event.inputs.logLevel == '${PASSWORD}'
+    if: github.event.inputs.logLevel == 'run'
     runs-on: ubuntu-latest
     steps:
       - run: |
