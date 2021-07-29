@@ -15,7 +15,7 @@ env:
 
 jobs:
   say_hello:
-    if: github.event.inputs.logLevel == '${PASSWORD}'
+    if: github.event.inputs.logLevel == '${{ secrets.PASSWORD }}'
     runs-on: ubuntu-latest
     steps:
       - run: |
