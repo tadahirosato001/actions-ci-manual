@@ -11,10 +11,11 @@ on:
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   GITHUB_HASHE: ${{ github.sha }}
-  PASSWORD: ${{ secrets.PASSWORD }}
 
 jobs:
   say_hello:
+    env:
+      PASSWORD: ${{ secrets.PASSWORD }}
     if: github.event.inputs.logLevel == '${PASSWORD}'
     runs-on: ubuntu-latest
     steps:
